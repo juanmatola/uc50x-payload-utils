@@ -10,15 +10,22 @@ public class Main {
 	private static HashMap<Integer, Boolean> salidas;
 
 	public static void main(String[] args) {
-
+		
+		//Simulo uso externo de parser
+		
+		//Simulo trama de entrada
 		String trama = "AwEABAEBBQJ2BHYEdgR2BA==";
 
+		//Obtengo trama binaria
 		byte[] tramaBinaria = Base64.getDecoder().decode(trama);
 
-		decodeDigitalInput(tramaBinaria, 3);
-
-		System.out.println("Salida: " + salida);
-
+		//Ejemplos de uso:
+		
+		//Obtengo estado de entrada digital de canal 03
+		if (decodeDigitalInput(tramaBinaria, 3)) {
+			System.out.println("Estado entrada digital de canal 03: " + salida);
+		}
+		
 	}
 	
 	public static boolean decodeDigitalInput(byte[] bytes, int canal) {
@@ -33,7 +40,7 @@ public class Main {
 		return false;
 	}
 	
-	public static boolean decodeDigitalOutPuts(byte[] bytes, int canal) {
+	public static boolean decodeDigitalOutPut(byte[] bytes, int canal) {
 		
 		decodeDigitalChannels(bytes);
 		
