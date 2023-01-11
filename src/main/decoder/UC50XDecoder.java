@@ -1,4 +1,4 @@
-package decoder;
+package main.decoder;
 
 public abstract class UC50XDecoder {
 
@@ -60,13 +60,15 @@ public abstract class UC50XDecoder {
 			} // AI 1
 			else if (channel_id == 0x05) {
 				int value = (unsignedByteToInt(bytes[i + 1]) << 8) + unsignedByteToInt(bytes[i]);
-				data.getAnalogInputs().put((int) channel_id, value);
+				double valorEscalado = value / 100;
+				data.getAnalogInputs().put((int) channel_id, valorEscalado);
 				i += 8;
 			}
 			// AI 2
 			else if (channel_id == 0x06) {
 				int value = (unsignedByteToInt(bytes[i + 1]) << 8) + unsignedByteToInt(bytes[i]);
-				data.getAnalogInputs().put((int) channel_id, value);
+				double valorEscalado = value / 100;
+				data.getAnalogInputs().put((int) channel_id, valorEscalado);
 				i += 8;
 			}
 

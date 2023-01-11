@@ -1,4 +1,4 @@
-package decoder;
+package main.decoder;
 
 import java.util.HashMap;
 
@@ -16,14 +16,14 @@ public class UC50XData {
 	// 04
 	private HashMap<Integer, Long> pulseCounters;
 
-	// TODO: decode analog inputs
-	private HashMap<Integer, Integer> analogInputs;
+	// Analog outputs: ch 5 & ch 6
+	private HashMap<Integer, Double> analogInputs;
 
 	public UC50XData() {
 		this.digitalInputs = new HashMap<Integer, Boolean>();
 		this.digitalOutputs = new HashMap<Integer, Boolean>();
 		this.pulseCounters = new HashMap<Integer, Long>();
-		this.analogInputs = new HashMap<Integer, Integer>();
+		this.analogInputs = new HashMap<Integer, Double>();
 	}
 
 	public Integer getBatteryLevel() {
@@ -58,11 +58,11 @@ public class UC50XData {
 		this.pulseCounters = pulseCounters;
 	}
 
-	public HashMap<Integer, Integer> getAnalogInputs() {
+	public HashMap<Integer, Double> getAnalogInputs() {
 		return analogInputs;
 	}
 
-	public void setAnalogInputs(HashMap<Integer, Integer> analogInputs) {
+	public void setAnalogInputs(HashMap<Integer, Double> analogInputs) {
 		this.analogInputs = analogInputs;
 	}
 
