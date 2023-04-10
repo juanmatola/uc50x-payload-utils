@@ -4,6 +4,15 @@ This repository provides a Java implementation for encoding and decoding payload
 
 ## Overview
 
+```
+|-----decoder
+|             |--------UC50XData
+|             |--------UC50XDecoder
+|-----encoder
+              |--------UCDigitalOutputs
+              |--------UC50XEncoder
+```
+
 The library contains two main packages:
 
 1. `decoder`: Contains the `UC50XDecoder` class for decoding the payloads received from the UC50X series controllers and the `UC50XData` class for storing the decoded payload data.
